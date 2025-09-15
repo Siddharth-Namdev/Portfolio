@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800;900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800;900&display=swap'); */
 
 * {
     margin: 0;
@@ -157,7 +157,7 @@ section {
     position: relative;
     display: flex;
     justify-content: space-between;
-    width: 34.5rem;
+    width: 50rem;
     height: 5rem;
 }
 
@@ -305,9 +305,10 @@ span {
 }
 
 .about-img img {
-    width: 90%;
-    border-radius: 50%;
-    border: .2rem solid var(--main-color);
+     width: 90%;
+    height: 90%;
+    object-fit: cover; 
+    border-radius: 50%;  
 }
 
 .about-img .circle-spin {
@@ -959,4 +960,150 @@ section:nth-child(odd) .animate.scroll,
     100% {
         width: 0;
     }
+}
+
+
+
+
+
+/* :root {
+  --bg-color: #f9f9f9;
+  --second-bg-color: #ffffff;
+  --main-color: #6c63ff;
+  --text-color: #333;
+} */
+
+.projects {
+  background: var(--bg-color);
+  padding: 10rem 9% 5rem;
+}
+
+.projects .heading {
+  text-align: center;
+  font-size: 5rem;
+  margin-bottom: 5rem;
+}
+
+/* Timeline line */
+.projects-timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-left: .2rem solid var(--main-color);
+}
+
+/* Project item */
+.project-item {
+  position: relative;
+  padding-left: 4rem;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: .5s ease;
+}
+
+/* Show animation */
+.project-item.show-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Timeline dot */
+.project-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -1.1rem;
+  width: 2rem;
+  height: 2rem;
+  background: var(--main-color);
+  border-radius: 50%;
+}
+
+/* Content box */
+
+.project-content {
+  position: relative;
+  padding: 2.5rem;
+  border: .2rem solid var(--main-color);
+  border-radius: .8rem;
+  background: var(--bg-color);   /* yaha bg-color rakh */
+  overflow: hidden;
+  z-index: 1;
+}
+
+.project-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--second-bg-color);   /* yaha second-bg-color rakh */
+  z-index: -1;
+  transition: .5s;
+}
+
+
+.project-content:hover::before {
+  width: 100%;
+}
+
+.project-content h3 {
+  font-size: 2.2rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.project-content p {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.project-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.project-links .btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--main-color);
+  border: .2rem solid var(--main-color);
+  border-radius: .8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--bg-color);
+  transition: .5s;
+}
+
+.project-links .btn:hover {
+  background: transparent;
+  color: var(--main-color);
+}
+
+/* Bullet points inside project content */
+.project-content ul {
+  list-style: disc inside; /* disc bullets inside the box */
+  margin: 1rem 0 2rem 0;
+  padding-left: 1.5rem;
+  font-size: 1.5rem; /* match with paragraph */
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Optional: make bullets a bit more stylish */
+.project-content ul li {
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+
+/* Custom bullet using pseudo-element (optional, looks modern) */
+.project-content ul li::marker {
+  color: var(--main-color);
+  font-size: 1.6rem;
 }

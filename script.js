@@ -47,3 +47,26 @@ window.onscroll = () => {
 
     footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
 }
+
+
+const projectItems = document.querySelectorAll('.project-item');
+
+  const showOnScroll = () => {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    projectItems.forEach(item => {
+      const boxTop = item.getBoundingClientRect().top;
+
+      if (boxTop < triggerBottom) {
+        item.classList.add('show-animate');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', showOnScroll);
+  // Initial check
+  showOnScroll();
+
+
+
+
